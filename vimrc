@@ -27,7 +27,7 @@ set cindent
 
 " Window Manager Layout
 " let g:winManagerWindowLayout='BufExplorer|FileExplorer|TagList'
-let g:winManagerWindowLayout='BufExplorer|TagList'
+let g:winManagerWindowLayout='TagList'
 let g:winManagerWidth=35
 
 " Automatically removing all trailing whitespace on specific file types
@@ -43,8 +43,14 @@ autocmd BufEnter * silent! lcd %:p:h
 " t for terminal in current directory
 " f for file Explorer
 " b for buffer explore
+" Tab for tab switch
 
 nmap w :WMToggle<cr>
 nmap t :!bash<cr>
 nmap f :Explore<cr>
 nmap b \be
+nmap <Tab> :bn<cr>
+
+" Settings for buftabs
+set laststatus=2
+let g:buftabs_in_statusline=1
